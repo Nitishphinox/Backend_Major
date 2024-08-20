@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<h1>Pizza List</h1>
+<a href="/pizzas/new" class="add-user-btn">Add Pizza</a>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Size</th>
+        <th>Category</th>
+        <th>Actions</th>
+
+
+    </tr>
+    <% pizzas.forEach(pizza=>{%>
+        <tr>
+            <th><%= pizza.name %></th>
+    <th><%= pizza.price %></th>
+    <th><%= pizza.size %></th>
+    <th><%= pizza.category %></th>
+
+
+
+
+            <td class="actions">
+                <a href="/pizzas/<%= pizza._id %>/edit">Edit</a>
+
+
+
+
+                <form action="/pizzas/<%= pizza._id %>?_method=DELETE" method="post">
+
+
+                <button type="submit" class="delete-btn">DELETE</button>
+
+
+                </form>
+
+
+
+
+            </td>
+
+        </tr>
+   <% }) %>
+</table>
+    </div>
+</body>
+</html>
